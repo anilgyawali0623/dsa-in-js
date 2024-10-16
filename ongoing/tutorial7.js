@@ -25,14 +25,10 @@ while (d1 < data1.length && d2 < data2.length) {
     data3[d3] = data2[d2];
     d3++;
     d2++;
-
   }
-
-
-
 }
 
-while (d1< data1.length) {
+while (d1 < data1.length) {
   data3[d3] = data1[d1];
   d1++;
   d3++;
