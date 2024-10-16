@@ -16,4 +16,4 @@ function recursiveBinary(data, start, end) {
   } else {
     recursiveBinary(data, start, mid - 1);
   }
-} 
+}
