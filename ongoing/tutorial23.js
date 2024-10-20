@@ -1,6 +1,6 @@
 // selection sort
 
-let items = [2,22,4,6,2, 4, 5, 56, 23, 52];
+let items = [2, 22, 4, 6, 2, 4, 5, 56, 23, 52];
 function selectionSort(data) {
   let minId;
   for (let i = 0; i < data.length; i++) {
@@ -16,6 +16,5 @@ function selectionSort(data) {
   }
 }
 
-
- selectionSort(items)
-  console.log(items)
+selectionSort(items);
+console.log(items);

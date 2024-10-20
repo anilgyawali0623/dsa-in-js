@@ -1,6 +1,6 @@
 // insertion sort
 
-let arr = [2,9,4,3,15,11,16];
+let arr = [2, 9, 4, 3, 15, 11, 16];
 function insertionSort(arr) {
   let i, current, j;
   for (i = 1; i < arr.length; i++) {
@@ -14,5 +14,4 @@ function insertionSort(arr) {
   }
 }
 
- insertionSort(arr);
-  console.log(arr)
+insertionSort(arr);
