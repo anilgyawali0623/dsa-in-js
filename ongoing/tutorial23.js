@@ -10,6 +10,7 @@ function selectionSort(data) {
         minId = j;
       }
     }
+    
     let temp = data[minId];
     data[minId] = data[i];
     data[i] = temp;
