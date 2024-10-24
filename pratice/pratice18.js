@@ -44,6 +44,25 @@ class LinkedList {
       lead.next = nextNode;
     }
   }
+
+  insertNode(index, value) {
+    let counter = 1;
+    let currentNode = this.head;
+    while (counter < index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    let nextNode = currentNode.next;
+    currentNode.next = {
+      value,
+      next: nextNode,
+    };
+  }
 }
 
 let list = new LinkedList(200);
+list.appendNode(100);
+list.appendNode(200);
+list.appendNode(300);
+list.appendNode(400);
+list.insertNode(2, 4000);
