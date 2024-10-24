@@ -58,6 +58,19 @@ class LinkedList {
       next: nextNode,
     };
   }
+  searchNode(data) {
+    let result = undefined;
+    let lead = this.head;
+    let loop = true;
+    while (loop) {
+      lead = lead.next;
+      loop = !!lead;
+      if (loop && lead.value === data) {
+        loop = false;
+        result = lead;
+      }
+    }
+  }
 }
 
 let list = new LinkedList(200);
