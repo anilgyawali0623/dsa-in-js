@@ -1,4 +1,3 @@
-
 class LinkedList {
   constructor(data) {
     this.head = {
@@ -6,6 +5,7 @@ class LinkedList {
       next: null,
     };
     this.tail = this.head;
+    this.size = 1;
   }
 
   appendNode(nodeData) {
@@ -16,6 +16,17 @@ class LinkedList {
 
     this.tail.next = newNode;
     this.tail = newNode;
+    this.size++;
+  }
+
+  traversing() {
+    let counter = 0;
+    let currentNode = this.head;
+
+    while (counter < this.size) {
+      currentNode = currentNode.next;
+      counter++;
+    }
   }
 }
 
