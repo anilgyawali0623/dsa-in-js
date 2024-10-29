@@ -48,6 +48,8 @@ class List {
       lead.next = nextNode;
     }
   }
+
+ 
 }
 
 let list = new List(23);

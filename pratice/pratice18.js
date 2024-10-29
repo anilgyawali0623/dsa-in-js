@@ -64,7 +64,7 @@ class LinkedList {
     let loop = true;
     while (loop) {
       lead = lead.next;
-      loop = !!lead;
+      loop = !!lead; // undefined null 0 huda yo false vahihalxa natra true for strinf number object non empty string
       if (loop && lead.value === data) {
         loop = false;
         result = lead;
