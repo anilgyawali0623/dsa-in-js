@@ -32,11 +32,22 @@ class BSTree {
         this.insertNode(root.left, newNode);
       }
     } else {
-        if (root.right === null) {
-            root.right = newNode;
-          } else {
-            this.insertNode(root.right, newNode);
-          }
+      if (root.right === null) {
+        root.right = newNode;
+      } else {
+        this.insertNode(root.right, newNode);
+      }
+    }
+  }
+  search(root, val) {
+    if (root === null) {
+      return false;
+    } else if (root.value === val) {
+      return true;
+    } else if (root.value > val) {
+      return this.search(root.left, val);
+    } else {
+      return this.search(root.right, val);
     }
   }
 }
