@@ -1,3 +1,9 @@
+
+// In simple words -
+// inorder : traverse left -> root -> right
+// preorder : traverse root -> left -> right
+// postorder : traverse left -> right -> root
+
 class Node {
   constructor(val) {
     this.value = val;
@@ -38,7 +44,9 @@ class BSTree {
         this.insertNode(root.right, newNode);
       }
     }
+
   }
+
   search(root, val) {
     if (root === null) {
       return false;
@@ -50,6 +58,24 @@ class BSTree {
       return this.search(root.right, val);
     }
   }
+
+
+preOrder(root){
+ if(root){
+   this.preOrder(root.left); 
+    this.preOrder(root.right)
+  }
+}
+
+ inOrder(root){
+   
+ }
+
+
+
+
+  
+
 }
 
 let bst = new BSTree();
