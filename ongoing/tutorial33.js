@@ -94,7 +94,30 @@ class BSTree {
     }
   }
 
-  
+  removeData(value) {
+    this.root = this.deleteNode(this.root, value);
+  }
+
+  deleteNode(root, value) {
+    if (root === null) {
+      return null;
+    }
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      if (!root.left && !root.right) {
+        return null;
+      } else if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.left;
+      }
+      root.value = this.minValue(root.right);
+      root.right = this.deleteNode(root.right, root.value);
+    }
+  }
 }
 
 let bst = new BSTree();
