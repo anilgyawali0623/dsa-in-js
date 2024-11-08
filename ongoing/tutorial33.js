@@ -1,4 +1,3 @@
-
 // In simple words -
 // inorder : traverse left -> root -> right
 // preorder : traverse root -> left -> right
@@ -44,7 +43,6 @@ class BSTree {
         this.insertNode(root.right, newNode);
       }
     }
-
   }
 
   search(root, val) {
@@ -59,34 +57,44 @@ class BSTree {
     }
   }
 
-
-preOrder(root){
- if(root){
-   this.preOrder(root.left); 
-    this.preOrder(root.right)
-  }
-}
-
-bfsTraversing(){
- let queue=[];
- queue.push(this.root)
-  while(queue.length){
-    let current= queue.shift();
-    if(current.left){
-       queue.push(current.left);
+  preOrder(root) {
+    if (root) {
+      this.preOrder(root.left);
+      this.preOrder(root.right);
     }
-     if(current.right){
-      queue.push(current.right); 
-     }
-
   }
-}
 
+  bfsTraversing() {
+    let queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let current = queue.shift();
+      if (current.left) {
+        queue.push(current.left);
+      }
+      if (current.right) {
+        queue.push(current.right);
+      }
+    }
+  }
 
+  minValue(root) {
+    if (!root.left) {
+      return root.value;
+    } else {
+      return this.minValue(root.left);
+    }
+  }
 
+  maxValue(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      return this.minValue(root.right);
+    }
+  }
 
   
-
 }
 
 let bst = new BSTree();
