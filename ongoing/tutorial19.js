@@ -32,6 +32,7 @@ class Queue {
       } else {
         this.front++;
       }
+       this.currentSize--;
     } else {
       this.front = -1;
       this.rear = -1;
