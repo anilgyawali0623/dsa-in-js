@@ -1,54 +1,41 @@
-class Queue {
+class CircularQueue {
+  //  define all the values here
+
   constructor(size) {
+    this.queue = new Array(size);
+    this.size = size;
     this.rear = -1;
     this.front = -1;
-    this.item = new Array(size);
-    this.maxSize = size;
-    this.currentSize = 0;
   }
-  enqueue(val) {
-    if (this.currentSize != this.maxSize) {
-      if (this.rear === this.maxSize - 1) {
-        this.rear = 0;
-      } else {
-        this.rear++;
-      }
-      this.item[this.rear] = val;
-      this.currentSize++;
-      if (this.front === -1) {
-        this.front = this.rear;
-      }
-    }
+  isEmpty() {
+    return this.front === -1;
+  }
+  isFull() {
+    return (this.rear + 1) % this.size === this.front;
   }
 
-  dequeue(){
-     if(this.currentSize!=0){
- this.item[this.front]=null;
-  if(this.front === this.maxSize-1){
-     this.front=0
-  }else{
-     this.front++;
-  }
-   this.currentSize--;
-     } else{
-       this.front=-1;
-       this.rear=-1;
-       console.log("queue is empty")
-     }
+  enqueue(val) {
+    if (this.isFull()) {
+      console.log("queue is full cannot insert more values");
+      return false;
+    }
+    // while inserting if the front is -1 make it 0
+    if (this.isEmpty()) {
+      this.front = 0;
+    }
+
+    this.rear = (this.rear + 1) % this.size; // this is done to increment the rear
+
+    this.queue[this.rear] = val;
+    return true;
   }
 }
-let queue = new Queue(4);
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-queue.enqueue(4);
-queue.dequeue()
-queue.dequeue()
-queue.enqueue(6)
-queue.dequeue()
-queue.enqueue(7)
-queue.enqueue(7)
-queue.enqueue(7)
+
+   const queue= new CircularQueue(4)
+   queue.enqueue(23)
+   queue.enqueue(23)
+   queue.enqueue(23)
+   queue.enqueue(23)
 
 
-console.log(queue);
+    console.log(queue)
